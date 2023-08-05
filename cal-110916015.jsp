@@ -1,9 +1,16 @@
 <HTML>
 <HEAD>
 <TITLE>Welcome to my JSP calculator!!</TITLE>
-MY JSP CALCULATOR!
 </HEAD>
-<BODY>
+<BODY style="background-color:#f0fff0;">
+<!--主頁面設計-->
+<br><br>
+<div style= "text-align:center;">
+	<font text-align:center; size="16" color="#9370db" style="text-shadow:3px 3px 3px #cccccc;" face="fantasy">
+		My JSP Calculator Homework!!
+	</font>
+</div>
+<br>
 <P></P>
 <!--作者姓名:林翡，學號:110916015!-->
 <!--操作說明:點選按鍵進行計算-->
@@ -26,7 +33,11 @@ MY JSP CALCULATOR!
 <%	String btn=request.getParameter("submit1");
 
 	if(btn!=null){
-			btn2=btn2+btn;//把點的bitton值加到字串btn2，我先組合字串
+		%>
+	<table  width="100" height="50" align="center" bgcolor="#f0ffff" border="3">
+	<tr>
+		<td align='center' valign="middle">
+			<%btn2=btn2+btn;//把點的bitton值加到字串btn2，我先組合字串
 			out.print("<INPUT type=\"text\" name=\"txt1\" value=\""+btn2+"\">");//顯示btn2
 			if(btn.equals("=")){//點=時進行字串拆解
 				if(btn2.contains("+")||btn2.contains("-")||btn2.contains("*")||btn2.contains("/")
@@ -133,43 +144,63 @@ MY JSP CALCULATOR!
 			}else if(btn2.contains("C")||btn2.contains("CE")){
 				btn2="";
 				out.print("<INPUT type=\"text\" name=\"txt1\" value=\""+btn2+"\">");
-			}
-	}
+			}%>
+		</tr>
+		</td>
+		</table>
+	<%}
 %>
 <FORM action="cal-110916015.jsp" method=post name=FORM1>
 <!--計算機的按鍵們-->
-<P>
-	<INPUT type="submit" value="%" name="submit1">
-	<INPUT type="submit" value="CE" name="submit1">
-	<INPUT type="submit" value="C" name="submit1"></p>
-	<p>
-	<INPUT type="submit" value="sin " name="submit1">
-	<INPUT type="submit" value="cos " name="submit1">
-	<INPUT type="submit" value="tan " name="submit1"></p>
-	<p>
-	<INPUT type="submit" value=" 1 Divided by x "name="submit1">
-	<INPUT type="submit" value=" x ^ 2 "name="submit1">
-	<INPUT type="submit" value=" sqrt x " name="submit1"></p>
-	<p>
-	<INPUT type="submit" value="7" name="submit1">
-	<INPUT type="submit" value="8" name="submit1">
-	<INPUT type="submit" value="9" name="submit1">
-	<INPUT type="submit" value="/" name="submit1"></p>
-	<p>
-	<INPUT type="submit" value="4" name="submit1">
-	<INPUT type="submit" value="5" name="submit1">
-	<INPUT type="submit" value="6" name="submit1">
-	<INPUT type="submit" value="*" name="submit1"></p>
-	<p>
-	<INPUT type="submit" value="1" name="submit1">
-	<INPUT type="submit" value="2" name="submit1">
-	<INPUT type="submit" value="3" name="submit1">
-	<INPUT type="submit" value="-" name="submit1"></p>
-	<p>
-	<INPUT type="submit" value="0" name="submit1">
-	<INPUT type="submit" value="." name="submit1">
-	<INPUT type="submit" value="=" name="submit1">
-	<INPUT type="submit" value="+" name="submit1"></p>
+<table width="400" height="300" align="center" bgcolor="#f0ffff" border="3">
+<tr>
+	<td align='center' valign="middle">
+		<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="%" name="submit1">
+		<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="CE" name="submit1">
+		<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="C" name="submit1"></td>
+	</tr>
+	<tr>
+	<td align='center' valign="middle">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="sin " name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="cos " name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="tan " name="submit1"></td>
+	</tr>
+	<tr>
+	<td align='center' valign="middle">
+	<INPUT style= "background-color:#87cefa;height:50px;width:100px" type="submit" value=" 1 Divided by x "name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:100px" type="submit" value=" x ^ 2 "name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:100px" type="submit" value=" sqrt x " name="submit1"></td>
+	</tr>
+	<tr>
+	<td align='center' valign="middle">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="7" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="8" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="9" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="/" name="submit1"></td>
+	</tr>
+	<tr>
+	<td align='center' valign="middle">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="4" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="5" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="6" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="*" name="submit1"></td>
+	</tr>
+	<tr>
+	<td align='center' valign="middle">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="1" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="2" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="3" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="-" name="submit1"></td>
+	</tr>
+	<tr>
+	<td align='center' valign="middle">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="0" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="." name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="=" name="submit1">
+	<INPUT style= "background-color:#87cefa;height:50px;width:50px" type="submit" value="+" name="submit1"></td>
+	</tr>
+</tr>
+</table>
 </FORM>					 			
 </BODY>
 </HTML>
